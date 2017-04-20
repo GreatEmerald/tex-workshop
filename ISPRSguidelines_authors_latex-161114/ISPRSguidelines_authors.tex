@@ -1,0 +1,315 @@
+% Version 2016-11-14
+% update – 161114 by Ken Arroyo Ohori: made spacing closer to Word template throughout, put proper quotes everywhere, removed spacing that could cause labels to be wrong, added non-breaking and inter-sentence spacing where applicable, removed explicit newlines
+
+\documentclass{isprs}
+\usepackage{subfigure}
+\usepackage{setspace}
+\usepackage{geometry} % added 27-02-2014 Markus Englich
+\usepackage{epstopdf}
+\usepackage[labelsep=period]{caption}  % added 14-04-2016 Markus Englich - Recommendation by Sebastian Brocks
+
+\geometry{a4paper, top=25mm, left=20mm, right=20mm, bottom=25mm, headsep=10mm, footskip=12mm} % added 27-02-2014 Markus Englich
+%\usepackage{enumitem}
+
+%\usepackage{isprs}
+%\usepackage[perpage,para,symbol*]{footmisc}
+
+%\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+\captionsetup{justification=centering} % thanks to Niclas Borlin 05-05-2016
+
+
+\begin{document}
+
+\title{GUIDELINES FOR AUTHORS PREPARING MANUSCRIPTS FOR PUBLICATION IN THE ISPRS ARCHIVES AND THE ISPRS ANNALS}
+
+% KAO: Remove extra spacing
+\author{
+ M. O. Altan\textsuperscript{a}, G. Toz\textsuperscript{a}, I. Dowman\textsuperscript{b}, S. Kulur\textsuperscript{a}, D. Z. Seker\textsuperscript{a}, C. Heipke\textsuperscript{c,}\thanks{Corresponding author}}
+
+% KAO: Remove extra newline
+\address{
+	\textsuperscript{a }ITU, Civil Engineering Faculty, 80626 Maslak Istanbul, Turkey - (oaltan, tozg, kulur, seker)@itu.edu.tr\\
+	\textsuperscript{b }Dept.\ of Geomatic Engineering, University College London, Gower Street, London, WC1E 6BT UK - idowman@ge.ucl.ac.uk\\
+	\textsuperscript{c }Institute of Photogrammetry and GeoInformation, Leibniz Universit\"at Hannover, Germany - heipke@ipi.uni-hannover.de
+}
+
+% If the corresponding author is NOT the final author, always add a % space before the subsequent comma, i.e.
+% first author name\textsuperscript{a,}\thanks{Corresponding author} , % second author name \textsuperscript{b}, etc.
+% thanks to Niclas Borlin 05-05-2016
+
+
+\commission{VI, }{VI} %This field is optional.
+\workinggroup{VI/4} %This field is optional.
+\icwg{}   %This field is optional.
+
+% KAO: Use times symbol
+\abstract{
+These guidelines are provided for preparation of papers accepted for publication in the series of Volumes of The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences and of The ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences from ISPRS Congresses and Symposia, and other ISPRS events.  These guidelines are issued to ensure a uniform style throughout these two series. All papers that are accepted by the relevant scientific committee of an ISPRS event will be published provided they arrive by the due date and they correspond to these guidelines. Reproduction is made directly from author-prepared manuscripts, in electronic or hardcopy form, in A4 paper size 297 mm $\times$ 210 mm (11.69 $\times$ 8.27 inches). To assure timely and efficient production of the Archives and Annals with a consistent and easy to read format, authors must submit their manuscripts in strict conformance with these guidelines. The Society may omit any paper that does not conform to the specified requirements. \textbf{There will be no opportunity for corrections or improvements of poorly prepared originals}. 
+}
+
+\keywords{Manuscripts, Proceedings, ISPRS Archives, ISPRS Annals, Guidelines for Authors, Styleguide}
+
+\maketitle
+
+%\saythanks % added 28-02-2014 Markus Englich
+
+\section{MANUSCRIPT}\label{MANUSCRIPT}
+
+% KAO: Sloppy spacing ensures non-overfull lines. Can be removed if this is not an issue.
+\sloppy
+
+\subsection{General Instructions}\label{sec:General Instructions}
+
+The maximum paper length is restricted to 8 pages. Invited papers can be increased to 12 pages. The paper should have the following structure: 
+
+%\itemize
+\begin{enumerate}
+\setlength\itemsep{0em}\setlength\parskip{0em}\setlength\topsep{0em}\setlength\partopsep{0em}\setlength\parsep{0em} 
+\item{Title of the paper} 
+\item{Authors and affiliation}
+\item{Keywords (6--8 words)}
+\item{Abstract (100--250 words)}
+\item{Introduction}
+\item{Main body}
+\item{Conclusions}
+\item{Acknowledgements (if applicable)}
+\item{References}
+\item{Appendix (if applicable)}
+\end{enumerate}
+
+% KAO: Use proper quotes
+Full papers submitted for double-blind review to the Annals must not contain any information 
+which makes it possible to identify the authors. In particular, names and affiliations must be 
+removed from the manuscript submitted for review. Also sentences such as ``As we have shown in 
+previous work (Author\_x, 20xx)'' are to be avoided. Instead use a formualtion such 
+as ``Author\_x (20xx) has shown \ldots''. Note that submissions which have not been 
+appropriately anonymised may be subject to immediate rejection.
+% In Section~\ref{MANUSCRIPT} we present related work
+
+\subsection{Page Layout, Spacing and Margins}\label{sec:Page Layout, Spacing and Margins}
+
+The paper must be compiled in one column for the Title and Abstract and in two columns for all subsequent text. 
+All text should be single-spaced, unless otherwise stated. Left and right justified typing is preferred.
+
+
+\subsection{Preparation in electronic form}\label{sec:Preparation in electronic form}
+
+% KAO: Remove newline
+To assist authors in preparing their papers, styleguides for preparing digital versions of papers are 
+provided in Word and/or LaTeX on the ISPRS web Page, see: http://www.isprs.org/documents/orangebook/app5.aspx.
+
+
+
+\subsection{Length and Font}\label{sec:Length and Font}
+
+All manuscripts, except Invited Papers are limited to a size of no more than eight (8) single-spaced 
+pages (A4 size), including abstracts, figures, tables and references. ISPRS Invited Papers are limited 
+to 12 pages. The font type Times New Roman with a size of nine (9) points is to be used.
+
+% KAO: Removed spacing before label: can cause references to be wrong
+\begin{table}[h]
+	\centering
+		\begin{tabular}{|l|c|c|}\hline
+			Setting&\multicolumn{2}{c|}{A4 size paper}\\\hline
+			  &mm&inches\\
+			 Top&25&1.0\\
+			 Bottom&25&1.0\\
+			 Left&20&0.8\\
+			 Right&20&0.8\\
+			 Column Width&82&3.2\\
+			 Column Spacing&6&0.25\\\hline
+		\end{tabular}
+	\caption{Margin settings for A4 size paper}
+\label{tab:Margin_settings}
+\end{table}
+
+\section{TITLE AND ABSTRACT BLOCK}\label{sec:TITLE AND ABSTRACT BLOCK}
+
+\subsection{Title}\label{sec:Title}
+
+The title should appear centered in bold capital letters, at the top of the 
+first page of the paper with a size of twelve (12) points and single-spacing. 
+After one blank line, type the author(s) name(s), affiliation and mailing address 
+(including e-mail) in upper and lower case letters, centred under the title. In the 
+case of multi-authorship, group them by firm or organization as shown in the title 
+of these Guidelines. 
+
+\subsection{ISPRS Affiliation (optional)}\label{sec:ISPRS Affiliation (optional)}
+
+% KAO: Use proper quotes
+For those authors affiliated with a specific Commission and/or Working Group of 
+ISPRS, a separate title may be entered. The title should be centered in bold type 
+after one blank line below the author's affiliation, i.e. Commission \#, Working Group \#. 
+The Commission number shall be Roman and the Working Group number should be the Commission 
+Roman number, slash, WG Arabic number (see example above).
+
+
+\subsection{Key Words}\label{sec:Key Words}
+
+% KAO: Use proper quotes and dash
+Leave two lines blank, then type \textbf{``KEY WORDS:''}
+in bold capital letters, followed by 5--8 key words. Note that ISPRS does not provide a set 
+list of key words any longer. Therefore, include those key words which you would 
+use to find a paper with content you are preparing.
+
+
+\subsection{Abstract}\label{sec:Abstract}
+
+% KAO: Use proper quotes and dash
+Leave two blank lines under the key words. Type \textbf{``ABSTRACT:''}
+flush left in bold Capitals followed by one blank line. Start now
+with a concise Abstract (100--250 words) which presents briefly the
+content and very importantly, the news and results of the paper in
+words understandable also to non-specialists. 
+
+
+\section{MAIN BODY OF TEXT}\label{sec:MAIN BODY OF TEXT}
+
+Type text single-spaced, \textbf{with} one blank line between paragraphs and 
+following headings. Start paragraphs flush with left margin.
+
+
+\subsection{Headings}\label{sec:Headings}
+
+% KAO: Remove explicit newlines in this section
+Major headings are to be centered, in bold capitals without 
+underlining, after two blank lines and followed by a one blank line.
+
+Type subheadings flush with the left margin in bold upper case and lower 
+case letters. Subheadings are on a separate line between two single blank lines.
+
+Subsubheadings are to be typed in bold upper case and lower case letters 
+after one blank line flush with the left margin of the page, with text 
+following on the same line. Subsubheadings may be followed by a period 
+or colon, they may also be the first word of the paragraph's sentence.
+
+Use decimal numbering for headings and subheadings.
+
+
+\subsection{Footnotes}\label{sec:Footnotes}
+
+Mark footnotes in the text with a number (1); use the same number for a 
+second footnote of the paper and so on. Place footnotes at the bottom of 
+the page, separated from the text above it by a horizontal line.
+
+
+\subsection{Illustrations and Tables}\label{sec:Illustrations and Tables}
+
+\subsubsection{Placement:}\label{sec:Placement}
+
+Figures must be placed in the appropriate location in the document, 
+as close as practicable to the reference of the figure in the text. 
+While figures and tables are usually aligned horizontally on the page, 
+large figures and tables sometimes need to be turned on their sides. 
+If you must turn a figure or table sideways, please be sure that the 
+top is always on the left-hand side of the page.
+
+
+\subsubsection{Captions:}\label{sec:Captions}
+
+All captions should be typed in upper and lower case letters, 
+centered directly beneath the illustration. Use single spacing if they 
+use more than one line. All captions are to be numbered consecutively, 
+e.g. Figure 1, Table 2, Figure 3.
+
+% KAO: Remove spacing before label: can cause reference to be wrong
+\begin{figure}[ht!]
+\begin{center}
+		\includegraphics[width=1.0\columnwidth]{figures/test_sites/fig1.eps}
+	\caption{Figure placement and numbering}
+\label{fig:figure_placement}
+\end{center}
+\end{figure}
+
+
+\subsubsection{Copyright:}\label{sec:Copyright}
+
+% KAO: Inter-sentence spacing
+If your article contains any copyrighted illustrations or imagery, 
+please include a statement of copyright such as: \copyright~SPOT Image Copyright 20xx 
+(fill in year), CNES\@. It is the author's responsibility to obtain any necessary 
+copyright permission. After publication, your article is distributed under \underline{the Creative 
+Commons Attribution 3.0 Unported License} and you retain the copyright.
+
+
+\subsection{Equations, Symbols and Units}\label{sec:Equations, Symbols and Units}
+
+\subsubsection{Equations:}\label{sec:Equations}
+
+Equations should be numbered consecutively throughout the paper. The equation 
+number is enclosed in parentheses and placed flush right. Leave one blank lines 
+before and after equations: 
+
+
+\begin{equation}\label{equ:1}
+	x = x_0 -c \frac{X - X_0}{Z - Z_0}; y = y_0 -c \frac{Y - Y_0}{Z - Z_0}
+\end{equation}
+
+\begin{tabbing} 
+where \hspace{0.6cm} \= $c$ = focal length\\
+\> $x,y$ = image coordinates\\
+\> $X_0,Y_0, Z_0$ = coordinates of projection center\\
+\> $X, Y, Z$ = object coordinates
+\end{tabbing}
+
+\subsubsection{Symbols and Units:}\label{sec:Symbols and Units}
+Use the SI (Syst\`{e}me Internationale) Units and Symbols. Unusual characters 
+or symbols should be explained in a list of nomenclature.
+
+% KAO: Non-breaking space
+\subsection{References}\label{sec:References}
+References should be cited in the text, thus~\cite{smith1987rep}, and listed in alphabetical order in the reference section. The following arrangements should be used:
+
+% KAO: Use proper quotes and non-breaking space
+\subsubsection{References from Journals:} 
+Journals should be cited like~\cite{smith1987art}. Names of journals can be abbreviated according to the ``International List of Periodical Title Word Abbreviations''. In case of doubt, write names in full.
+
+% KAO: Non-breaking space
+\subsubsection{References from Books:} 
+Books should be cited like~\cite{smith1989}.
+
+% KAO: Non-breaking space, remove newline
+\subsubsection{References from Other Literature:}
+Other literature should be cited like~\cite{smith1987rep} and~\cite{smith2000}.
+
+% KAO: Non-breaking space
+\subsubsection{References from websites:}
+References from the internet should be cited like~\cite{moons1997}.
+
+\section*{ACKNOWLEDGEMENTS (Optional)}\label{ACKNOWLEDGEMENTS}
+
+Acknowledgements of support for the project/paper/author are welcome. 
+
+{%\footnotesize
+	\begin{spacing}{0.9}% tune the size by altering the parameter
+		\bibliography{ISPRSguidelines_authors} % Include your own bibliography (*.bib), style is given in isprs.cls
+	\end{spacing}
+}
+
+%Moons, T., 1997. Report on the Joint ISPRS Commission III/IV Workshop 
+%``3D Reconstruction and Modelling of Topographic Objects'', Stuttgart, Germany.
+%{http://www.radig.informatik.tu-}\\
+%{muenchen.de/ISPRS/WG-III4-IV2-Report.html} (28 Sep. 1999).
+
+%Smith, J., 1987a. Close range photogrammetry for analyzing distressed trees. 
+%\textit{Photogrammetria}, 42(1), pp. 47-56.
+
+%Smith, J., 1987b. Economic printing of color orthophotos. Report KRL-01234, Kennedy Research Laboratories, Arlington, VA, USA.
+
+%Smith, J., 1989. \textit{Space Data from Earth Sciences}. Elsevier, Amsterdam, pp. 321-332.
+
+%Smith, J., 2000. Remote sensing to predict volcano outbursts. 
+%In: \textit{The International Archives of the Photogrammetry, Remote 
+%Sensing and Spatial Information Sciences}, Kyoto, 
+%Japan, Vol. XXVII, Part B1, pp. 456-469.
+
+
+
+\section*{APPENDIX (Optional)}\label{APPENDIX}
+
+Any additional supporting data may be appended, provided the paper does not exceed the limits given above. 
+
+\vspace{1cm}
+\textit{Revised June 2015}
+
+\end{document}

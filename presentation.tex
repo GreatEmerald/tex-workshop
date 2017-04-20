@@ -49,16 +49,21 @@
   \subsubsection{Issues with Office}
   \begin{frame}
     \frametitle{Issues with Office}
-    \begin{itemize}
-     \item Images: they never stay in place, go above text, outside of caption boxes, etc.
-     \item Copy-pasting text (or worse, tables) leads to formatting problems
-     \item Different office programs render the same files differently
-     \item Bibliography management is a hassle, citation styles are too rigid
-     \item Math formulas handled by another program altogether
-     \item Reformatting (for publishing etc.) is tricky
-     \item Large documents/images become very slow
-     \item \TeX{} solves that, and more
-    \end{itemize}
+    \begin{columns}
+      \column{0.85\textwidth}
+      \begin{itemize}
+      \item Images: they never stay in place, go above text, outside of caption boxes, etc.
+      \item Copy-pasting text (or worse, tables) leads to formatting problems
+      \item Different office programs render the same files differently
+      \item Bibliography management is a hassle, citation styles are too rigid
+      \item Math formulas handled by another program altogether
+      \item Reformatting (for publishing etc.) is tricky
+      \item Large documents/images become very slow
+      \item \TeX{} solves that, and more
+      \end{itemize}
+      \column{0.15\textwidth}
+      \include{images/Microsoft_Clippy}
+    \end{columns}
   \end{frame}
   
   \subsubsection{\TeX{} history and example}
@@ -104,39 +109,49 @@
   \subsubsection{Graphical user interfaces}
   \begin{frame}
     \frametitle{Graphical user interfaces}
-    \begin{itemize}
-     \item Quick access to formatting, math, table creation macros, spell checking, word wrap, search, compiling, viewing the result
-     \item Cross-platform GUIs, such as:
-     \begin{itemize}
-      \item \href{http://www.xm1math.net/texmaker/}{Texmaker} and \href{http://www.texstudio.org/}{TeXstudio}
-      \item \href{http://kile.sourceforge.net/}{Kile}
-      \item \href{https://www.lyx.org/}{\hologo{LyX}}
-     \end{itemize}
-     \item All depend on an already installed \TeX{} distribution (i.e. \TeX{} Live) to work!
-     \begin{itemize}
-      \item Linux distributions provide \TeX{} Live (and GUIs) out of the box via package managers
-      \item \TeX{} Live installer for Windows \href{https://www.tug.org/texlive/acquire-netinstall.html}{available}
-      \item macOS can use Mac\TeX{}
-     \end{itemize}
-    \end{itemize}
+    \begin{columns}
+      \column{0.77\textwidth}
+      \begin{itemize}
+	\item Quick access to formatting, math, table creation macros, spell checking, word wrap, search, compiling, viewing the result
+	\item Cross-platform GUIs, such as:
+	\begin{itemize}
+	  \item \href{http://www.xm1math.net/texmaker/}{Texmaker} and \href{http://www.texstudio.org/}{TeXstudio}
+	  \item \href{http://kile.sourceforge.net/}{Kile}
+	  \item \href{https://www.lyx.org/}{\hologo{LyX}}
+	\end{itemize}
+	\item All depend on an already installed \TeX{} distribution (i.e. \TeX{} Live) to work!
+	\begin{itemize}
+	  \item Linux distributions provide \TeX{} Live (and GUIs) out of the box via package managers
+	  \item \TeX{} Live installer for Windows \href{https://www.tug.org/texlive/acquire-netinstall.html}{available}
+	  \item macOS can use Mac\TeX{}
+	\end{itemize}
+      \end{itemize}
+      \column{0.23\textwidth}
+      \include{images/gui}
+    \end{columns}
   \end{frame}
   
   \subsubsection{Collaborative editing}
   \begin{frame}
     \frametitle{Collaborative editing}
-    \begin{itemize}
-     \item Web-based editors (a la Google Docs) available
-     \begin{itemize}
-      \item Papeeria, Authorea, Overleaf, ShareLaTeX, EtherTeX, ...
-      \item Most require payment for private repositories
-     \end{itemize}
-     \item Git (thanks to plain text)
-     \begin{itemize}
-      \item GitHub, GitLab, own server, ...
-      \item Beware of merge conflicts
-      \item Useful even when writing alone: no more problems with backups and multiple versions
-     \end{itemize}
-    \end{itemize}
+    \begin{columns}
+      \column{0.77\textwidth}
+      \begin{itemize}
+	\item Web-based editors (a la Google Docs) available
+	\begin{itemize}
+	  \item Papeeria, Authorea, Overleaf, ShareLaTeX, EtherTeX, ...
+	  \item Most require payment for private repositories
+	\end{itemize}
+	\item Git (thanks to plain text)
+	\begin{itemize}
+	  \item GitHub, GitLab, own server, ...
+	  \item Beware of merge conflicts: split chapters into separate files
+	  \item Useful even when writing alone: no more problems with backups and multiple versions
+	\end{itemize}
+      \end{itemize}
+      \column{0.23\textwidth}
+      \include{images/collab}
+    \end{columns}
   \end{frame}
   
   \subsubsection{Drawbacks}
@@ -156,19 +171,26 @@
       \item Need packages for handling image formats etc.
      \end{itemize}
     \end{itemize}
+    \centering
+    \include{images/oscilloscope}
   \end{frame}
   
   \subsubsection{More information}
   \begin{frame}
     \frametitle{Want to learn more?}
-    \begin{itemize}
-     \item WikiBooks: \href{https://en.wikibooks.org/wiki/LaTeX}{https://en.wikibooks.org/wiki/LaTeX}
-     \item CTAN: \href{http://ctan.org}{http://ctan.org}
-     \item Stack Exchange: \href{http://tex.stackexchange.com/}{http://tex.stackexchange.com/}
-     \item This presentation and examples: \href{https://github.com/GreatEmerald/tex-workshop}{https://github.com/GreatEmerald/tex-workshop}
-     \item \href{https://github.com/GreatEmerald/AEO-validation-paper/tree/master/paper}{My Advanced Earth Observation paper}
-     \item \href{https://github.com/GreatEmerald/master-classification/tree/master/thesis}{My Master thesis and proposal}
-    \end{itemize}
+    \begin{columns}
+      \column{0.8\textwidth}
+      \begin{itemize}
+	\item WikiBooks: \href{https://en.wikibooks.org/wiki/LaTeX}{https://en.wikibooks.org/wiki/LaTeX}
+	\item CTAN: \href{http://ctan.org}{http://ctan.org}
+	\item Stack Exchange: \href{http://tex.stackexchange.com/}{http://tex.stackexchange.com/}
+	\item This presentation and examples: \href{https://github.com/GreatEmerald/tex-workshop}{https://github.com/GreatEmerald/tex-workshop}
+	\item \href{https://github.com/GreatEmerald/AEO-validation-paper/tree/master/paper}{My Advanced Earth Observation paper}
+	\item \href{https://github.com/GreatEmerald/master-classification/tree/master/thesis}{My Master thesis and proposal}
+      \end{itemize}
+      \column{0.2\textwidth}
+      \include{images/books}
+    \end{columns}
   \end{frame}
   
   \subsection{Questions}
@@ -197,7 +219,7 @@
   \subsection{Features}
   \subsubsection{Text and math}
   \begin{frame}
-    \frametitle{Text and math (\texttt{example.tex})}
+    \frametitle{Text and math \\ (\texttt{example.tex})}
     \begin{itemize}
      \item \TeX{} is plain text: no formatting is preserved when pasting
      \item Whitespace is ignored, unless two new lines
@@ -207,7 +229,7 @@
   
   \subsubsection{Formatting}
   \begin{frame}
-    \frametitle{Formatting}
+    \frametitle{Formatting \\ (\texttt{ISPRSguidelines\_authors.tex})}
     \begin{itemize}
      \item Formatting can be global or local
      \begin{itemize}
@@ -217,15 +239,15 @@
      \item Journals often provide \texttt{.cls} style templates or template \texttt{.tex} files
      \begin{itemize}
       \item \texttt{<filename>.cls}: use \texttt{\textbackslash{}documenttype\{<filename>\}}
-      \item \texttt{<filename>.tex}: possibly use \texttt{\textbackslash{}input\{<filename>\}}
-      \item \href{http://www.isprs.org/documents/orangebook/app5.aspx}{Example from Advanced Earth Observation}
+      \item \texttt{<filename>.tex}: possibly use \texttt{\textbackslash{}input\{<filename>\}}, edit or use as a reference
+      \item \href{http://www.isprs.org/documents/orangebook/app5.aspx}{Example from Advanced Earth Observation (ISPRS)}
      \end{itemize}
     \end{itemize}
   \end{frame}
   
   \subsubsection{Figures}
   \begin{frame}
-    \frametitle{Figures (\texttt{figures.tex})}
+    \frametitle{Figures \\ (\texttt{figures.tex})}
     \begin{itemize}
      \item \LaTeX{} has a figure environment that makes it easy to include figures and refer to them
      \item The position of figures is determined automagically – no problem to add more text
@@ -236,7 +258,7 @@
   
   \subsubsection{\hologo{BibTeX}}
   \begin{frame}
-    \frametitle{\hologo{BibTeX} (\texttt{bibliography.tex})}
+    \frametitle{\hologo{BibTeX} \\ (\texttt{bibliography.tex})}
     \begin{itemize}
      \item A system that handles all things bibliography
      \item Database of bibliography is stored in plain text, \texttt{.bib} files, one may copy-paste entries from Google Scholar
@@ -249,7 +271,7 @@
   
   \subsubsection{CTAN}
   \begin{frame}
-    \frametitle{More packages! (\texttt{gantt.tex})}
+    \frametitle{More packages! \\ (\texttt{gantt.tex})}
     \begin{itemize}
      \item CTAN: Comprehensive \TeX{} Archive Network (\href{http://ctan.org}{http://ctan.org})
      \item 5300 packages at the moment of writing! (was: 5199)
