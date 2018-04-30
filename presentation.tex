@@ -59,7 +59,7 @@
       \item Math formulas handled by another program altogether
       \item Reformatting (for publishing etc.) is tricky
       \item Large documents/images become very slow
-      \item \TeX{} solves that, and more
+      \item \TeX{} solves that, and more: it's fun!
       \end{itemize}
       \column{0.15\textwidth}
       \include{images/Microsoft_Clippy}
@@ -140,8 +140,9 @@
       \begin{itemize}
 	\item Web-based editors (a la Google Docs) available
 	\begin{itemize}
-	  \item Papeeria, Authorea, Overleaf, ShareLaTeX, EtherTeX, ...
+	  \item Papeeria, ShareLaTeX, Authorea, Overleaf, EtherTeX, ...
 	  \item Most require payment for private repositories
+	  \item Perhaps the university (WDCC) could host an instance in the future
 	\end{itemize}
 	\item Git (thanks to plain text)
 	\begin{itemize}
@@ -149,6 +150,7 @@
 	  \item Beware of merge conflicts: split chapters into separate files
 	  \item Useful even when writing alone: no more problems with backups and multiple versions
 	\end{itemize}
+	\item Both combined!
       \end{itemize}
       \column{0.23\textwidth}
       \include{images/collab}
@@ -163,7 +165,7 @@
      \item Confusing errors (if any!)
      \begin{itemize}
       \item Auxiliary files in working directory may help: \texttt{.log} for engines, \texttt{.blg} for \hologo{BibTeX}
-      \item Overfull \texttt{\textbackslash{}hbox}es: text interpreted as a character/box; if it cannot be broken up nicely, warns you
+      %\item Overfull \texttt{\textbackslash{}hbox}es: text interpreted as a character/box; if it cannot be broken up nicely, warns you
       \item \texttt{File '<package>.sty' not found.} means you don't have the package installed
      \end{itemize}
      \item Quirkiness:
@@ -171,6 +173,7 @@
       \item \hologo{pdfLaTeX} doesn’t support UTF-8 symbols
       \item Need packages for handling image formats etc.
      \end{itemize}
+     \item People who are unwilling to learn to use collaborative \LaTeX{} editors or PDF editors
     \end{itemize}
     \centering
     \include{images/oscilloscope}
@@ -188,6 +191,7 @@
 	\item This presentation and examples: \href{https://github.com/GreatEmerald/tex-workshop}{https://github.com/GreatEmerald/tex-workshop}
 	\item \href{https://github.com/GreatEmerald/AEO-validation-paper/tree/master/paper}{My Advanced Earth Observation paper}
 	\item \href{https://github.com/GreatEmerald/master-classification/tree/master/thesis}{My Master thesis and proposal}
+	\item PhD thesis template: \href{https://github.com/loicdtx/Wageningen\_PhD\_thesis\_template}{https://github.com/loicdtx/Wageningen\_PhD\_thesis\_template}
       \end{itemize}
       \column{0.2\textwidth}
       \include{images/books}
@@ -276,10 +280,11 @@
     \frametitle{More packages! \\ (\texttt{gantt.tex})}
     \begin{itemize}
      \item CTAN: Comprehensive \TeX{} Archive Network (\href{http://ctan.org}{http://ctan.org})
-     \item 5300 packages at the moment of writing! (was: 5199)
+     \item 5504 packages at the moment of writing! (was: 5199)
       \begin{itemize}
       \item \texttt{pgfgantt}: Gantt charts! Useful for ACT and thesis proposals.
       \item \texttt{tikz}: flowcharts and other vector graphics!
+      \item \texttt{glossaries}: Acronym management!
       \item \texttt{textcomp}: symbols °, ©, ... for \hologo{pdfLaTeX}
       \item \texttt{qrcode}: QR code generation!
       \item \texttt{pdfcomment}: comments inside PDF files!
