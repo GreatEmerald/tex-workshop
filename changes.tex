@@ -1,0 +1,16 @@
+\documentclass{article}
+
+% Changes package options; use [final] to display as if all have been accepted
+\usepackage{changes}
+\definechangesauthor{dm}
+\definechangesauthor{jv}
+
+\title{Tracking changes}
+
+\begin{document}
+
+\deleted[id=jv]{This is an irrelevant statement.} This is an \replaced[id=dm]{correct}{erroneous} statement. \added[id=jv]{This is a new statement.}
+
+This is a discussion-triggering statement. \comment[id=dm]{Is it really?} This is another discussion-\highlight[id=dm, comment=Is that the right word to use?]{triggering} statement.
+
+\end{document}

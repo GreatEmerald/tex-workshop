@@ -1,0 +1,27 @@
+\documentclass{article}
+
+% Acronym management: package ``glossaries''
+\usepackage[acronym,shortcuts]{glossaries}
+
+% Define your acronyms: ID, short version, long version
+\newacronym{WUR}{WUR}{Wageningen University \& Research}
+\newacronym{WU}{WU}{Wageningen University}
+\newacronym{WR}{WR}{Wageningen Research}
+\newacronym{WENR}{WENR}{Wageningen Environmental Research}
+
+% Create an index at the end of the document, simple style
+\makenoidxglossaries
+
+\title{Acronyms}
+\author{Dainius Masili\=unas}
+
+\begin{document}
+
+\maketitle
+
+\ac{WUR} is an organisation that is comprised of \ac{WU} and \ac{WR}. \ac{WR} includes institutes like \ac{WENR}. While \ac{WENR} is not part of \ac{WU}, they are both part of \ac{WUR} and thus there is a lot of collaboration between them.
+
+% Place the index here
+\printnoidxglossary[type=acronym] 
+
+\end{document}
