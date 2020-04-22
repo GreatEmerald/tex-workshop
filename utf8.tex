@@ -6,6 +6,9 @@
 % Package for printing ``XeLaTeX''
 \usepackage{hologo}
 
+% Package for stacking of characters for ruby
+\usepackage{mathtools}
+
 \title{中文}
 \author{Overleaf developers and Dainius Masiliūnas}
 
@@ -14,12 +17,22 @@
 \maketitle
 
 \section{前言}
-這是一些文字
+這是一些文字。
+這是繁體中文。
+
+Math works as usual:
 
 $$ e = mc^2 $$
 
 \section{关于数学部分}
 数学、中英文皆可以混排。You can intersperse math, Chinese and English (Latin script) without adding extra environments. Note that this requires compiling with \hologo{XeLaTeX} or \hologo{LuaTeX}.
 
-這是繁體中文。
+\section{Ruby}
+
+You can also write ruby (also known as $\stackrel{\text{furigana}}{\text{ふりがな}}$), where e.g. $\stackrel{\text{pīnyīn}}{\text{拼音}}$ is written at the top and $\stackrel{\text{hànzì}}{\text{漢字}}$ is at the bottom.
+
+We can make it more concise by defining our own command.
+\newcommand{\ruby}[2]{\stackrel{\text{#1}}{\text{#2}}}
+That way, we can just use \texttt{\textbackslash{ruby}} like this: $\ruby{Three Kingdoms}{三國}$ is a famous time period, known for its heroes $\ruby{Cao}{曹}$ $\ruby{Cao}{操}$, $\ruby{Liu}{劉}$ $\ruby{Bei}{備}$ and $\ruby{Sun}{孫}$ $\ruby{Quan}{權}$.
+
 \end{document}
