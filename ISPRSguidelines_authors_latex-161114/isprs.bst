@@ -34,6 +34,7 @@ ENTRY
     type
     volume
     year
+    url
   }
   { field.used }
   { extra.label sort.label list.year }
@@ -56,7 +57,7 @@ FUNCTION {output.nonnull}
     { output.state after.block =
         { add.period$ write$
           newline$
-          "\newblock " write$
+          " " write$
         }
         { output.state before.all =
             'write$
@@ -167,7 +168,7 @@ FUNCTION {format.names}
             { ", " * t * }
             { t "others" =
                 { " et~al." * }
-                { " and " * t * }
+                { ", " * t * }
               if$
             }
           if$
@@ -180,17 +181,19 @@ FUNCTION {format.names}
   while$
 }
 
+% updated 23-04-2019
 FUNCTION {format.authors}
 { author empty$
     { "" }
-    { "{vv~}{ll}{, jj}{, f.}" author format.names }
+    { "{vv~}{ll}{, jj}{, f.}" author format.names } 
   if$
 }
 
+% updated 23-04-2019
 FUNCTION {format.editors}
 { editor empty$
     { "" }
-    { "{vv~}{ll}{, jj}{, f.}" editor format.names
+    { "{vv~}{ll}{, jj}{, f.}" editor format.names 
       editor num.names$ #1 >
         { " (eds)" * }
         { " (ed.)" * }
@@ -273,7 +276,7 @@ FUNCTION {format.number.series}
         { "" }
         { series ", " * }
       if$
-      "Vol." * volume tie.or.space.connect
+      "" * volume tie.or.space.connect
       "volume and number" number either.or.check
       number empty$
          { "" * }
@@ -285,6 +288,17 @@ FUNCTION {format.number.series}
         }
       if$
     }
+  if$
+}
+
+FUNCTION {format.volume.number}
+{ volume empty$
+	{ "" }
+	{ number empty$
+		{ volume }
+		{ volume "(" * number * ")" *}
+	  if$
+	}
   if$
 }
 
@@ -325,8 +339,8 @@ FUNCTION {format.pages}
 { pages empty$
     { "" }
     { pages multi.page.check
-        { "pp.~" pages n.dashify * }
-        { "p.~" pages * }
+        { "" pages n.dashify * } % removed pp.~
+        { "" pages * }  % removed p.~
       if$
     }
   if$
@@ -347,7 +361,7 @@ FUNCTION {format.vol.num.pages}
     'skip$
     { duplicate$ empty$
         { pop$ format.pages }
-        { ", pp.~" * pages n.dashify * }
+        { ", " * pages n.dashify * } % removed pp.~
       if$
     }
   if$
@@ -373,8 +387,8 @@ FUNCTION {format.in.ed.booktitle}
 { booktitle empty$
     { "" }
     { editor empty$
-        { "In: \emph{" booktitle * "}" * } %KH: edit April 2016 - emphasises the booktitle for bibtex items:  inproceedings, incollection and conference 
-        { "In: " format.editors.reverse * ", \emph{" * booktitle * "}" * } %KH: edit April 2016 - emphasises the booktitle for bibtex items:  inproceedings, incollection and conference 
+        { "\emph{" booktitle * "}" * } %KH: edit April 2016 - emphasises the booktitle for bibtex items:  inproceedings, incollection and conference 
+        { "" format.editors.reverse * ", \emph{" * booktitle * "}" * } %KH: edit April 2016 - emphasises the booktitle for bibtex items:  inproceedings, incollection and conference 
       if$
     }
   if$
@@ -417,11 +431,11 @@ FUNCTION {format.article.crossref}
           warning$
           ""
         }
-        { "In: " journal *  " \cite{" * crossref * "}" *
+        { "" journal *  " \cite{" * crossref * "}" *
         }
       if$
     }
-    { " In: \cite{" crossref * "}" * }
+    { " \cite{" crossref * "}" * }
   if$
 }
 
@@ -430,7 +444,7 @@ FUNCTION {format.book.crossref}
     { "empty volume in " cite$ * "'s crossref of " * crossref * warning$
       "in "
     }
-    { "Vol." volume tie.or.space.connect
+    { "" volume tie.or.space.connect
       " of " *
     }
   if$
@@ -494,7 +508,7 @@ FUNCTION {format.lab.names.abbr}
         { s #1 "{vv~}{ll}" format.name$ " et al." * }
         { s #2 "{ff }{vv }{ll}{ jj}" format.name$ "others" =
             { s #1 "{vv~}{ll}" format.name$ " et al." * }
-            { s #1 "{vv~}{ll}" format.name$ " and " *
+            { s #1 "{vv~}{ll}" format.name$ ", " * % updated 23-04-2019
               s #2 "{vv~}{ll}" format.name$ * 
             }
           if$
@@ -517,7 +531,7 @@ FUNCTION {format.lab.names.full}
             { ", " * t * }
             { t "others" =
                 { " et~al." * }
-                { " and " * t * }
+                { " , " * t * } % replaced and with ,
               if$
             }
           if$
@@ -630,30 +644,15 @@ FUNCTION {list.label.output}
 FUNCTION {article}
 { output.bibitem
   list.label.output
-  list.year output.nonnull
+  list.year output
   new.block
-  author "author" item.check
-  title.field field.used =
-    { skip$ }
-    { format.title "title" output.check }
-  if$
+  title output
   new.block
-  crossref missing$
-    { journal "journal" duplicate$ item.check emphasize %KH edit - April 2016 - emphasize function emphasizes top entry of stack, in this case the journal name
-      pages empty$
-        {
-          output
-        }
-        {
-          " " *
-          format.vol.num.pages * output
-        }
-      if$
-    }
-    { format.article.crossref output.nonnull
-      format.pages output
-    }
-  if$
+  journal emphasize output
+  format.volume.number output
+  pages output
+  new.block
+  url output
   new.block
   note output
   fin.entry

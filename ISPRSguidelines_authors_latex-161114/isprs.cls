@@ -1,9 +1,11 @@
 % Document class for ISPRS Publications
-% Version 2016-05-05
+% Version 2019-01-09
 % Copyright (C) 1999 by Carsten Steger
 % Minor modifications January, 2000 by Rolf A. de By
 % Modified March 2002 according to ISPRS "Orange Book" for 2 column-layout
 % Added intercommission working group commdn \icwg, 01/12/2015 Konrad Schindler
+% Modified Jan 2019 to match current Word template (Dennis Wittich)
+
 \NeedsTeXFormat{LaTeX2e}[1996/06/01]
 \ProvidesClass{isprs}[2000/01/15 Class for ISPRS Publications]
 \RequirePackage{times}
@@ -33,18 +35,21 @@
 
 \lineskip 1pt
 \normallineskip 1pt
-\def\baselinestretch{1.0} % KAO: Increased spacing to more closely match 
+\def\baselinestretch{1.17} % KAO: Increased spacing to more closely match 
 \newcommand\titlesize{%
    \fontsize{12}{12}\selectfont}
 
+
 \renewcommand\normalsize{%
-   \@setfontsize\normalsize\@ixpt\@xipt %Aenderung
+   \fontsize{9.25}{9.25}\selectfont % DW: Increased font size to more closely match 
+   %\@setfontsize\normalsize\@ixpt\@xipt %Aenderung
    \abovedisplayskip 9\p@ \@plus2\p@ \@minus5\p@
    \abovedisplayshortskip \z@ \@plus3\p@
    \belowdisplayshortskip 6\p@ \@plus3\p@ \@minus3\p@
    \belowdisplayskip \abovedisplayskip
    \let\@listi\@listI}
-
+   
+   
 \renewcommand\small{%
    \@setfontsize\small\@ixpt{11}%
    \abovedisplayskip 8.5\p@ \@plus3\p@ \@minus4\p@
@@ -209,7 +214,7 @@
   \setcounter{subsection}{0}
   \def\thesection{\Alph{section}}}
 
-\leftmargini 25pt
+\leftmargini 5pt
 \leftmarginii 22pt
 \leftmarginiii 18.7pt
 \leftmarginiv 17pt
@@ -221,7 +226,7 @@
 \labelwidth\leftmargini\advance\labelwidth-\labelsep
 
 \def\@listI{\leftmargin\leftmargini \parsep 4\p@ plus2\p@ minus\p@
-\topsep 8\p@ plus2\p@ minus4\p@
+\topsep 4\p@ plus2\p@ minus4\p@
 \itemsep 4\p@ plus2\p@ minus\p@}
 
 \let\@listi\@listI
@@ -661,3 +666,4 @@
 \pagenumbering{arabic}
 \pagestyle{empty}
 \bibliographystyle{isprs}
+
